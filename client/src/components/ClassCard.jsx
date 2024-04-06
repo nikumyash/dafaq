@@ -1,4 +1,3 @@
-import React from 'react'
 import { SiGoogleclassroom } from "react-icons/si";
 
 const ClassCard = () => {
