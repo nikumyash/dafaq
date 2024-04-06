@@ -27,7 +27,7 @@ const CreateClassroom = () => {
                 </div>
             </div>
             <div className="m-auto border py-3 px-10" onClick={()=>{
-                
+                console.log("hello");
             }}>Create</div>
         </div>
     </div>
