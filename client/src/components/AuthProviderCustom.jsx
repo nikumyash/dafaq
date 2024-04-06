@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Auth0Provider } from '@auth0/auth0-react';
 
-const AuthProviderTeachers = ({ children }) => {
-  const domain = import.meta.env.VITE_TEACHER_AUTH_DOMAIN;
-  const clientId = import.meta.env.VITE_TEACHER_CLIENT_ID;
+const AuthProviderCustom = ({ children }) => {
+  const domain = import.meta.env.VITE_AUTH_DOMAIN;
+  const clientId = import.meta.env.VITE_CLIENT_ID;
   return (
     <Auth0Provider
       domain={domain}
@@ -14,4 +14,4 @@ const AuthProviderTeachers = ({ children }) => {
     </Auth0Provider>
   );
 };
-export default AuthProviderTeachers;
+export default AuthProviderCustom;

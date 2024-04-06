@@ -2,22 +2,20 @@
 import React from 'react'
 import HomePage from './pages/HomePage'
 import {BrowserRouter,Route,Routes} from "react-router-dom"
-import AuthProviderTeachers from "./components/AuthProviderTeachers"
-import AuthProviderStudents from "./components/AuthProviderStudents"
-import TeacherPage from './pages/TeacherPage'
-import StudentPage from './pages/StudentPage'
+import { useAuth0 } from '@auth0/auth0-react';
+import AuthProviderCustom from './components/AuthProviderCustom'
 
 const App = () => {
+  const { isLoading, isAuthenticated, error, user, loginWithRedirect, logout } =useAuth0();
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<HomePage/>}/>
-            <Route path="/teacher" element={<AuthProviderTeachers><TeacherPage/></AuthProviderTeachers>}/>
-            <Route path="/student" element={<AuthProviderStudents><StudentPage/></AuthProviderStudents>}/>
-        </Routes>
-      </BrowserRouter>
-      <HomePage/>
+      <AuthProviderCustom>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<HomePage/>}/>
+          </Routes>
+        </BrowserRouter>
+      </AuthProviderCustom>
     </>
   )
 }
