@@ -26,7 +26,9 @@ const CreateClassroom = () => {
                         }
                 </div>
             </div>
-            <div className="m-auto border py-3 px-10">Create</div>
+            <div className="m-auto border py-3 px-10" onClick={()=>{
+                
+            }}>Create</div>
         </div>
     </div>
   )
