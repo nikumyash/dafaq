@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Auth0Provider } from '@auth0/auth0-react';
 
 const AuthProviderTeachers = ({ children }) => {
