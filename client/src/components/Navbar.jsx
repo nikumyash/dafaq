@@ -8,10 +8,10 @@ const Navbar = () => {
             <li className='py-4 px-8 text-lg transition-all ease duration-300 hover:text-blue-400  cursor-pointer text-center'>For <span className='text-xl'>students</span></li>
             <li className='py-4 px-8 text-lg transition-all ease duration-300 hover:text-blue-400  cursor-pointer text-center'>For <span className=' text-xl'>teachers</span></li>
         </ul> 
-        <div className="flex flex-row gap-8 mr-8">
+        {/* <div className="flex flex-row gap-8 mr-8">
             <div className="flex rounded-md transition-all ease duration-200 cursor-pointer h-12 w-32 items-center justify-center bg-blue-600 text-white text-lg hover:bg-blue-700">Register</div>
             <div className="flex rounded-md transition-all ease duration-200 cursor-pointer h-12 w-28 items-center justify-center hover:bg-slate-800 hover:text-white">Log In <IoMdArrowDropdown/></div>
-        </div>
+        </div> */}
     </div>  
   )
 }
