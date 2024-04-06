@@ -12,6 +12,7 @@ const Navbar = () => {
               For teachers
             </li>
         </ul>   
+
     </div>  
   )
 }
