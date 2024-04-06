@@ -11,7 +11,6 @@ const AuthProviderCustom = ({ children }) => {
       authorizationParams={{
         redirect_uri:"http://localhost:5173/",
         audience:import.meta.env.VITE_AUDIENCE,
-        scope:"read:current_user update:current_user_metadata"
       }}
       cacheLocation="localstorage"
 

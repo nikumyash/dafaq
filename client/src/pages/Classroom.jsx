@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react'
 import { MdAccountCircle } from "react-icons/md";
 import Doubt from '../components/Doubt';
+import {useAuth0} from '@auth0/auth0-react';
+import { useParams } from 'react-router-dom';
 
-const DoubtsMgmt = () => {
+const Classroom = () => {
+    const {user,getAccessTokenSilently} = useAuth0();
+    const {id} = useParams();
     const [inputText,setInputText] = useState([])
     const [doubt,setDoubt] = useState("")
     const saveHandler = () =>{
@@ -34,15 +38,17 @@ const DoubtsMgmt = () => {
             <div className="flex mx-8"><textarea className=' w-96 bg-zinc-900 border-b-[1px] p-4' placeholder='Enter your doubt here... ' cols="30" rows="10" maxLength={255}></textarea></div>
             <div className="h-8 w-36 rounded flex justify-center items-center cursor-pointer hover:opacity-85 m-8 mt-4 bg-red-600" onClick={saveHandler}>Create a post</div>
         </div>
+        <div className='flex flex-wrap'>
         {
             doubt && doubt.map((doubt)=>(
                 <Doubt key={doubt.id} text={doubt.text}></Doubt>
             ))
         }
+        </div>
     </div>
   )
 }
 
-export default DoubtsMgmt
+export default Classroom
 
 
