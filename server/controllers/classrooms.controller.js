@@ -1,3 +1,4 @@
 const createClassroom = (req,res)=>{
-    if()
+    // if()
+    res.json({msg:"from classroom"})
 }

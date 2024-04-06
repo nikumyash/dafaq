@@ -3,12 +3,23 @@ const connectDB = require("./config/dbConfig");
 require("dotenv").config();
 const app = express();
 const classroomRouter = require("./routes/classroom.route")
-const doubtRouter = require("./routes/doubt.route")
+const doubtRouter = require("./routes/doubt.route");
+const authCheck = require("./middlewares/authCheck.middleware");
+const cors = require("cors");
 
 connectDB();
 
+app.use(cors());
+
+app.use((req,res,next)=>{
+    console.log(req.headers);
+    next();
+})
+app.use(authCheck);
+
 app.get("/",(req,res)=>{
-    res.json({status:"ok",message:"test"});
+    console.log(req.auth);
+    return res.send("Hello");
 })
 app.use("/classroom",classroomRouter);
 app.use("/doubt",doubtRouter);

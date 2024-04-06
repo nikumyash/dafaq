@@ -9,8 +9,10 @@ const AuthProviderCustom = ({ children }) => {
       domain={domain}
       clientId={clientId}
       authorizationParams={{
-        redirect_uri:"http://localhost:5173/"
+        redirect_uri:"http://localhost:5173/",
+        audience:import.meta.env.AUDIENCE,
       }}
+      scope="openid profile email"
     >
       {children}
     </Auth0Provider>
