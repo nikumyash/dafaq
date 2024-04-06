@@ -1,18 +1,21 @@
 const mongoose = require("mongoose");
 const {Schema} = require("mongoose");
 
-
 const classroomsSchema = Schema({
         createdBy:{
-            type:mongoose.Types.ObjectId,
-            ref:'users',
+            type:String,
+            required:true,
         },
         attendees:{
-            type:[],
-            ref:"classrooms",
-        },
-        materials:{
             type:[String],
+            required:true,
+        },
+        messages:{
+            type:[{
+                type:Schema.ObjectId,
+                ref:"messages"
+            }],
+            default:[]
         }
 }, 
 { 

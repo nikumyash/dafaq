@@ -8,7 +8,9 @@ const AuthProviderCustom = ({ children }) => {
     <Auth0Provider
       domain={domain}
       clientId={clientId}
-      redirectUri={window.location.origin}
+      authorizationParams={{
+        redirect_uri:"http://localhost:5173/"
+      }}
     >
       {children}
     </Auth0Provider>
