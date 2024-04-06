@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const {Schema} = require("mongoose");
-
 const classroomsSchema = Schema({
         createdBy:{
             type:String,
@@ -10,12 +9,13 @@ const classroomsSchema = Schema({
             type:[String],
             required:true,
         },
-        messages:{
-            type:[{
-                type:Schema.ObjectId,
-                ref:"messages"
-            }],
-            default:[]
+        name:{
+            type:String,
+            required:true,
+        },
+        url:{
+            type:String,
+            default:[],       
         }
 }, 
 { 

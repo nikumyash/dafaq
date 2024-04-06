@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const Classroom = () => {
+const CreateClassroom = () => {
     const [stud, setStud] = useState([]);
     const [list,setList] = useState("");
     const RemStud = (e) => {
@@ -32,4 +32,4 @@ const Classroom = () => {
   )
 }
 
-export default Classroom
+export default CreateClassroom

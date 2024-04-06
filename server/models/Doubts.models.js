@@ -6,7 +6,7 @@ const doubtSchema = Schema({
             type:String,
             required:true,
         },
-        classroom:{
+        cls_url:{
             type:String,
             required:true,
         },

@@ -2,7 +2,7 @@
 import HomePage from './pages/HomePage'
 import {BrowserRouter,Route,Routes} from "react-router-dom"
 import AuthProviderCustom from './components/AuthProviderCustom'
-import Classroom from './pages/Classroom'
+import CreateClassroom from './pages/Classroom'
 import CreateClass from './pages/CreateClass'
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
           <Routes>
             <Route index element={<HomePage/>}/>
             <Route path="/classroom/new" element={<CreateClass/>}/>
-            <Route path="/classroom/manage" element={<Classroom/>}/>
+            <Route path="/classroom/manage" element={<CreateClassroom/>}/>
           </Routes>
         </BrowserRouter>
       </AuthProviderCustom>
