@@ -15,7 +15,7 @@ const classroomsSchema = Schema({
         },
         url:{
             type:String,
-            default:[],       
+            default:"",       
         }
 }, 
 { 
