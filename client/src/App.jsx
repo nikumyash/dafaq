@@ -1,33 +1,22 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import ProfilePage from './pages/SignUpPage'
-import CreateClass from './pages/CreateClass'
-import ClassCard from './components/ClassCard'
-import Classroom from './pages/Classroom'
-import { BrowserRouter,Route,Routes } from 'react-router-dom'
+
+import HomePage from './pages/HomePage'
+import {BrowserRouter,Route,Routes} from "react-router-dom"
+import AuthProviderCustom from './components/AuthProviderCustom'
 
 const App = () => {
   return (
     <>
-      <div className="flex flex-wrap">
-        <ClassCard/>
-        <ClassCard/>
-        <ClassCard/>
-        <ClassCard/>
-        <CreateClass/>  
-        {/* <Classroom/> */}
 
+      <AuthProviderCustom>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<HomePage/>}/>
+          </Routes>
+        </BrowserRouter>
+      </AuthProviderCustom>
 
-        {/* <Routes>
-          <Route path='/CreateClass' element={<CreateClass/>}></Route>
-          <Route path='/Classroom' element={<Classroom/>}></Route>
-          <Route path='/ClassCard' element={<ClassCard/>}></Route>
-        </Routes> */}
-
-
-      </div>
     </>
   )
 }
