@@ -8,7 +8,6 @@ import AuthProviderCustom from './components/AuthProviderCustom'
 const App = () => {
   return (
     <>
-
       <AuthProviderCustom>
         <BrowserRouter>
           <Routes>
@@ -16,7 +15,6 @@ const App = () => {
           </Routes>
         </BrowserRouter>
       </AuthProviderCustom>
-
     </>
   )
 }
