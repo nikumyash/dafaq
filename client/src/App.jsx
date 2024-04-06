@@ -1,15 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
+
 import HomePage from './pages/HomePage'
 import {BrowserRouter,Route,Routes} from "react-router-dom"
-import AuthProviderTeachers from "./components/AuthProviderTeachers"
-import AuthProviderStudents from "./components/AuthProviderStudents"
-import TeacherPage from './pages/TeacherPage'
-import StudentPage from './pages/StudentPage'
+import AuthProviderCustom from './components/AuthProviderCustom'
 
 const App = () => {
   return (
     <>
+<<<<<<< HEAD
       <BrowserRouter>
         <Routes>
           <Route index element={<HomePage/>}/>
@@ -18,6 +17,17 @@ const App = () => {
         </Routes>
       </BrowserRouter>
       
+=======
+
+      <AuthProviderCustom>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<HomePage/>}/>
+          </Routes>
+        </BrowserRouter>
+      </AuthProviderCustom>
+
+>>>>>>> acfd71a6b5f3efffa313b396dfb2fa8abe383377
     </>
   )
 }

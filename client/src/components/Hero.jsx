@@ -1,15 +1,28 @@
-import React from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
 import img from '../assets/1.jpg'
+<<<<<<< HEAD
 import hero from '../assets/hero.png'
 import student from '../assets/student.png'
 import teacher from '../assets/teacher.png'
 
+=======
+import { useAuth0 } from '@auth0/auth0-react';
+>>>>>>> acfd71a6b5f3efffa313b396dfb2fa8abe383377
 const Hero = () => {
+  const { getAccessTokenSilently} = useAuth0();
+
   return (
     <div className='text-white bg-zinc-900 mt-10'>
       <div className='flex justify-center flex-row'>
+        <button onClick={async ()=>{
+          const token = await getAccessTokenSilently();
+          console.log(token);
+          fetch("http://localhost:6969/",{
+            method:"GET",
+            headers:{
+              authorization:`Bearer ${token}`
+            }
+          }).then(res=>res.json()).then(data=>console.log(data))}
+        }>Submit</button>
         <div className="flex-1">
           <div className="text-center mt-10 text-6xl">
             Let's Make Learning Easier
