@@ -11,14 +11,10 @@ connectDB();
 
 app.use(cors());
 
-app.use((req,res,next)=>{
-    console.log(req.headers);
-    next();
-})
 app.use(authCheck);
 
 app.get("/",(req,res)=>{
-    console.log(req.auth);
+    console.log(req.user);
     return res.send("Hello");
 })
 app.use("/classroom",classroomRouter);
