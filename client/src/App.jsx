@@ -13,11 +13,11 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route index element={<HomePage/>}/>
-            <Route path="/teacher" element={<AuthProviderTeachers><TeacherPage/></AuthProviderTeachers>}/>
-            <Route path="/student" element={<AuthProviderStudents><StudentPage/></AuthProviderStudents>}/>
+            {/* <Route path="/teacher" element={<AuthProviderTeachers><TeacherPage/></AuthProviderTeachers>}/>
+            <Route path="/student" element={<AuthProviderStudents><StudentPage/></AuthProviderStudents>}/> */}
         </Routes>
       </BrowserRouter>
-      <HomePage/>
+      
     </>
   )
 }

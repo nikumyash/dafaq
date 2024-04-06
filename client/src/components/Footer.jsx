@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
     return (
-        <footer className="bg-zinc-900 text-white py-[50px] relative flex items-center flex-col">
+        <footer className="bg-zinc-900 text-white py-[50px] relative flex items-center flex-col mt-10">
                 <ul className="list-none flex items-center justify-center gap-[30px] mb-[20px]">
                     <li className="transition-all ease duration-300 cursor-pointer font-[12px] hover:text-blue-500">Terms Of Use</li>
                     <li className="transition-all ease duration-300 cursor-pointer font-[12px] hover:text-blue-500">Privacy-Policy</li>
