@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import {useAuth0} from '@auth0/auth0-react';
+import {useAuth0, withAuthenticationRequired} from '@auth0/auth0-react';
 import ClassCard from '../components/ClassCard';
 
 const ManageClassroom = () => {
@@ -20,7 +20,6 @@ const ManageClassroom = () => {
                 Authorization: `Bearer ${token}`
             }
           }).then((res)=>{
-            
               setClassrooms(res.data.data);
           }).catch(err=>console.log(err));
         }
@@ -41,4 +40,6 @@ const ManageClassroom = () => {
   )
 }
 
-export default ManageClassroom
+export default withAuthenticationRequired(ManageClassroom, {
+  onRedirecting: () => <div>Redirecting you to the login page...</div>,
+});
