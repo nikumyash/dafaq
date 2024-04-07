@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  api:
+    container_name: dafaq-api 
+    restart: unless-stopped
+    image: api_prod:1.0.0
+    build:
+      context: server
+      target: server
+      dockerfile: Dockerfile
+    ports:
+      - 6969:6969
+  client:
+    container_name: dafaq-client 
+    image: client_prod:1.0.0
+    environment:
+      - VITE_SERVER_URL=http://localhost/api
+    build:
+      context: client
+      target: client
+      dockerfile: Dockerfile
+    ports:
+      - 5173:5173
+    volumes:
+      - prod_client:/usr/src/app/dist
+    depends_on:
+      - api
+  nginx:
+    image: nginx:1.21.0-alpine
+    container_name: nginx
+    restart: always
+    tty: true
+    ports: 
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - prod_client:/usr/share/nginx/html
+    depends_on:
+      - api
+      - client
+
+volumes:
+  prod_client:

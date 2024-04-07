@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import {useAuth0} from '@auth0/auth0-react';
+import {useAuth0, withAuthenticationRequired} from '@auth0/auth0-react';
 import axios from "axios";
 const CreateClassroom = () => {
     const [stud, setStud] = useState([]);
@@ -50,15 +50,6 @@ const CreateClassroom = () => {
     </div>
   )
 }
-
-{/* <button onClick={async ()=>{
-          const token = await getAccessTokenSilently();
-          fetch("http://localhost:6969/",{
-            headers:{
-              Authorization: `Bearer ${token}`,
-            }
-          }).then(res=>res.text()).then(data=>console.log(data));
-        }}>
-          Submit Button
-</button> */}
-export default CreateClassroom
+export default withAuthenticationRequired(CreateClassroom, {
+    onRedirecting: () => <div>Redirecting you to the login page...</div>,
+  });

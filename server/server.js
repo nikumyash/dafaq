@@ -66,11 +66,13 @@ app.post("/doubt/new",async (req,res)=>{
     }
     const doubt = Doubt({createdBy:mail,cls_url:cls_url,text:text});
     const x = await doubt.save();
-    return res.status(200);
+    return res.status(200).json({status:"ok"});
 })
 
-app.get("/doubt/:id/reply",async(req,res)=>{
-    const {text,id} = req.body;
+app.post("/doubt/:id/reply",async (req,res)=>{
+    const {id} = req.params;
+    const {text} = req.body;
+    console.log(text);
     if(!text){
         return res.status(400).json({error:"text is empty"})
     }
@@ -80,7 +82,7 @@ app.get("/doubt/:id/reply",async(req,res)=>{
     }
     doubt.solution = text;
     await doubt.save();
-    return res.status(200);
+    return res.status(200).json({status:"Ok"});
 })
 
 app.use("*",(req,res)=>{
